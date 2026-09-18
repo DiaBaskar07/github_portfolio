@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Diya Baskar — Brand Strategist Portfolio">
+<title>Diya Baskar — Brand Strategist</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --pink:#d57795;
+  --blush:#e7a6ae;
+  --cream:#ecddce;
+  --sage:#adba86;
+  --green:#9ba778;
+  --ink:#302d2b;
+  --white:#fffaf6;
+  --shadow:0 18px 45px rgba(48,45,43,.10);
+  --radius:24px;
+  --max:1180px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"DM Sans",sans-serif;
+  color:var(--ink);
+  background:var(--cream);
+  line-height:1.7;
+}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+
+.container{width:min(92%,var(--max));margin:auto}
+
+/* ---------- NAV ---------- */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(236,221,206,.92);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(48,45,43,.08);
+}
+.nav-inner{
+  height:76px;display:flex;align-items:center;justify-content:space-between;
+}
+.logo{
+  font-family:"Cormorant Garamond",serif;
+  font-size:1.65rem;font-weight:700;letter-spacing:.02em;
+}
+.logo span{color:var(--pink)}
+.nav-links{display:flex;gap:28px;font-size:.82rem;font-weight:600}
+.nav-links a{position:relative}
+.nav-links a::after{
+  content:"";position:absolute;left:0;bottom:-5px;width:0;height:2px;
+  background:var(--pink);transition:.25s;
+}
+.nav-links a:hover::after{width:100%}
+
+/* ---------- HERO ---------- */
+.hero{
+  min-height:100vh;
+  display:grid;place-items:center;
+  position:relative;overflow:hidden;
+  padding:130px 0 80px;
+  background:var(--cream);
+}
+.hero::before{
+  content:"";position:absolute;width:520px;height:520px;border-radius:50%;
+  background:var(--blush);opacity:.38;filter:blur(2px);
+  right:-180px;top:-160px;
+}
+.hero::after{
+  content:"";position:absolute;width:300px;height:300px;border-radius:50%;
+  background:var(--sage);opacity:.35;
+  left:-130px;bottom:-100px;
+}
+.hero-grid{
+  position:relative;z-index:1;
+  display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:center;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;
+  color:var(--pink);font-size:.78rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:.16em;margin-bottom:20px;
+}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--pink)}
+h1,h2,h3{
+  font-family:"Cormorant Garamond",serif;
+  line-height:1.02;
+}
+h1{font-size:clamp(4rem,8vw,7.5rem);font-weight:600}
+.hero h1 em{color:var(--pink);font-style:normal}
+.hero-tag{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(1.55rem,2.5vw,2.25rem);
+  margin:28px 0 20px;
+}
+.hero-copy{max-width:690px;font-size:1rem;color:#514b47}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:13px 21px;border-radius:999px;font-size:.84rem;font-weight:700;
+  transition:.25s;border:1px solid var(--ink);
+}
+.btn-primary{background:var(--pink);border-color:var(--pink);color:white}
+.btn-secondary{background:transparent}
+.btn:hover{transform:translateY(-2px);box-shadow:0 9px 20px rgba(48,45,43,.12)}
+
+.hero-card{
+  position:relative;min-height:430px;border-radius:36px;
+  background:var(--green);box-shadow:var(--shadow);
+  padding:32px;display:flex;align-items:flex-end;overflow:hidden;
+}
+.hero-card::before{
+  content:"";position:absolute;width:250px;height:250px;border:1px solid rgba(255,250,246,.5);
+  border-radius:50%;top:50px;right:40px;
+}
+.hero-card::after{
+  content:"";position:absolute;width:145px;height:145px;border-radius:50%;
+  background:var(--blush);right:95px;top:105px;
+}
+.hero-note{
+  position:relative;z-index:2;background:var(--cream);padding:25px;
+  width:100%;border-radius:22px;
+}
+.hero-note strong{font-family:"Cormorant Garamond",serif;font-size:1.8rem;display:block}
+.hero-note small{display:block;margin-top:5px}
+
+/* ---------- SECTIONS ---------- */
+section{padding:110px 0}
+.section-label{
+  color:var(--pink);font-size:.76rem;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;margin-bottom:12px;
+}
+.section-title{font-size:clamp(2.7rem,5vw,4.7rem);margin-bottom:22px}
+.section-intro{max-width:760px;color:#5c5652}
+
+.about{background:var(--white)}
+.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}
+.pullquote{
+  background:var(--blush);padding:34px;border-radius:var(--radius);
+  font-family:"Cormorant Garamond",serif;font-size:2rem;line-height:1.15;
+  box-shadow:var(--shadow);
+}
+.about-copy p{margin-bottom:20px}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:30px}
+.info-card{
+  background:var(--cream);border-radius:18px;padding:22px;
+  border:1px solid rgba(48,45,43,.07);
+}
+.info-card span{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--pink);font-weight:700}
+.info-card strong{display:block;margin-top:6px}
+
+/* ---------- PROJECTS ---------- */
+.projects{background:var(--cream)}
+.project{
+  border-radius:32px;padding:46px;margin-top:30px;
+  box-shadow:var(--shadow);overflow:hidden;
+}
+.project.audit{background:var(--blush)}
+.project.campaign{background:var(--sage)}
+.project.brand{background:var(--green)}
+.project-top{
+  display:flex;justify-content:space-between;gap:30px;align-items:flex-start;
+}
+.project-number{
+  font-family:"Cormorant Garamond",serif;font-size:5rem;line-height:.8;
+  opacity:.35;
+}
+.project h3{font-size:3.3rem;margin:7px 0 8px}
+.project-kicker{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em}
+.project-quote{
+  font-family:"Cormorant Garamond",serif;font-size:1.65rem;max-width:750px;margin:25px 0;
+}
+.project-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:30px}
+.project-panel{
+  background:rgba(255,250,246,.58);padding:26px;border-radius:20px;
+}
+.project-panel h4{
+  font-family:"Cormorant Garamond",serif;font-size:1.6rem;margin-bottom:9px
+}
+.project-panel p{font-size:.91rem}
+.project-panel ul{padding-left:20px;font-size:.91rem}
+.project-panel li{margin:7px 0}
+.project-wide{grid-column:1/-1}
+.before-after{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ba{
+  padding:20px;border-radius:16px;background:rgba(255,255,255,.35)
+}
+.ba strong{display:block;font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;margin-bottom:7px}
+.strategy-chain{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px
+}
+.chain-card{
+  background:rgba(255,250,246,.6);padding:18px;border-radius:15px
+}
+.chain-card span{display:block;color:var(--pink);font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em}
+.chain-card strong{display:block;margin-top:4px}
+
+/* ---------- TOOLKIT ---------- */
+.toolkit{background:var(--white)}
+.toolkit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:35px}
+.tool{
+  min-height:145px;padding:23px;border-radius:20px;
+  background:var(--cream);border:1px solid rgba(48,45,43,.07);
+  transition:.25s;
+}
+.tool:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.tool h4{font-family:"Cormorant Garamond",serif;font-size:1.5rem}
+.tool p{font-size:.78rem;color:#625b56;margin-top:4px}
+
+/* ---------- EXPERIENCE ---------- */
+.experience{background:var(--pink)}
+.experience .section-label{color:var(--cream)}
+.timeline{margin-top:35px;border-left:2px solid rgba(255,255,255,.55);padding-left:30px}
+.timeline-item{position:relative;margin-bottom:38px}
+.timeline-item::before{
+  content:"";position:absolute;width:12px;height:12px;border-radius:50%;
+  background:var(--cream);left:-37px;top:8px
+}
+.timeline-item h3{font-size:2.2rem}
+.timeline-item .meta{font-size:.77rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin:6px 0 10px}
+
+/* ---------- CONTACT ---------- */
+.contact{background:var(--cream)}
+.contact-box{
+  background:var(--sage);padding:55px;border-radius:32px;
+  display:grid;grid-template-columns:1.2fr .8fr;gap:50px;
+}
+.contact h2{font-size:clamp(3rem,6vw,5rem)}
+.contact-links{display:flex;flex-direction:column;gap:12px;justify-content:center}
+.contact-link{
+  padding:16px 18px;background:rgba(255,250,246,.6);border-radius:15px;font-weight:600;
+  transition:.2s;
+}
+.contact-link:hover{background:var(--cream);transform:translateX(4px)}
+
+/* ---------- FOOTER ---------- */
+footer{
+  background:var(--blush);padding:28px 0;
+}
+.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}
+footer small{font-size:.74rem}
+.back-top{font-weight:700;font-size:.78rem}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:900px){
+  .hero-grid,.about-grid,.contact-box{grid-template-columns:1fr}
+  .hero-card{min-height:320px}
+  .toolkit-grid{grid-template-columns:1fr 1fr}
+  .project-grid{grid-template-columns:1fr}
+  .strategy-chain{grid-template-columns:1fr}
+}
+@media(max-width:650px){
+  .nav-links{display:none}
+  section{padding:80px 0}
+  h1{font-size:4rem}
+  .project{padding:28px 22px}
+  .project h3{font-size:2.6rem}
+  .project-top{display:block}
+  .project-number{margin-bottom:18px}
+  .info-grid,.toolkit-grid,.before-after{grid-template-columns:1fr}
+  .contact-box{padding:32px 24px}
+  .footer-inner{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+
+<body id="top">
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="#top" class="logo">Diya <span>Baskar</span></a>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#toolkit">Toolkits</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">Brand Strategy Portfolio</div>
+      <h1>Diya <em>Baskar</em></h1>
+      <div class="hero-tag">“Strategy is a system. Brands are the interface.”</div>
+      <p class="hero-copy">
+        I diagnose brand systems the way I once diagnosed software ones, then use that same
+        structural thinking to build consumer insight, positioning, and brand worlds.
+        Three projects, three ways of applying it.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#projects">Explore Projects</a>
+        <a class="btn btn-secondary" href="#contact">Contact Me</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <div class="hero-note">
+        <strong>Creative thinking. Structural thinking.</strong>
+        <small>Consumer insight · Positioning · Brand worlds · Campaign systems</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="container about-grid">
+    <div>
+      <div class="section-label">01 — About Me</div>
+      <div class="pullquote">“Finding the gap between what a system is supposed to do and what it actually does is the same muscle as finding the gap between what a brand says and what a customer experiences.”</div>
+    </div>
+
+    <div class="about-copy">
+      <h2 class="section-title">A strategist with a systems lens.</h2>
+      <p>
+        Before brand strategy, I spent eight months inside a live Salesforce CRM at ITC Infotech —
+        auditing business logic, mapping customer funnels, and testing the workflows that decide
+        whether a system actually works for the person using it. That's a strategy skill wearing
+        a QA badge.
+      </p>
+      <p>
+        I moved that thinking toward brands on purpose — pairing it with a genuine interest in why
+        people notice what they notice, drawn from reading cognition and behavioral research on
+        the side. The three projects here apply that combination at three different points in a
+        brand's life: diagnosing an existing one, building the campaign system that carries its
+        narrative forward, and creating one from a consumer tension with no brand attached to it yet.
+      </p>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <span>Education</span>
+          <strong>Online MBA in Marketing Management | NMIMS</strong>
+          <small>2-Year Program · 2026–2028</small>
+        </div>
+        <div class="info-card">
+          <span>Education</span>
+          <strong>B.E. — Sri Sairam Engineering College</strong>
+          <small>2023 · CGPA 9.1</small>
+        </div>
+        <div class="info-card">
+          <span>Background</span>
+          <strong>Former Associate IT Consultant | ITC Infotech</strong>
+          <small>Salesforce CRM & Funnel Architecture</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="projects">
+  <div class="container">
+    <div class="section-label">02 — Featured Projects</div>
+    <h2 class="section-title">Three strategic problems.<br>Three different systems.</h2>
+    <p class="section-intro">
+      An existing brand diagnosed. A campaign system designed. A brand built from a consumer tension.
+    </p>
+
+    <!-- PROJECT 1 -->
+    <article class="project audit">
+      <div class="project-top">
+        <div>
+          <div class="project-kicker">Project 01 · Brand Audit</div>
+          <h3>THEATER.XYZ</h3>
+          <p>A premium Indian D2C fashion label audit.</p>
+        </div>
+        <div class="project-number">01</div>
+      </div>
+
+      <div class="project-quote">“Theater.xyz has beautiful scenes. It doesn't yet have one story.”</div>
+
+      <div class="project-grid">
+        <div class="project-panel project-wide">
+          <h4>Overview</h4>
+          <p>
+            A brand audit of Theater.xyz, a premium Indian D2C fashion label — built on publicly
+            available site and social research, distinguishing what was directly observed from
+            what is sourced or inferred.
+          </p>
+        </div>
+
+        <div class="project-panel">
+          <h4>The Challenge</h4>
+          <p>
+            Visually distinctive brand treated as separate scenes. Theater.xyz has built a genuinely
+            distinctive visual identity — dark-romantic, editorial, cinematic. Product drops like
+            the Kai footwear collection show real skill at turning a single item into a scene with
+            cultural reference points and mood. The question: does that identity actually survive
+            the customer's journey from a campaign image to a checkout page, or does it live only
+            in the moments the brand chooses to art-direct?
+          </p>
+        </div>
+
+        <div class="project-panel">
+          <h4>The Insight</h4>
+          <p>
+            Tone across the site follows a clear arc — cinematic and evocative at discovery,
+            intimate at brand storytelling, then flat and functional right at the product page
+            and checkout, the exact moment a visitor is deciding whether to buy.
+          </p>
+        </div>
+
+        <div class="project-panel">
+          <h4>The Strategic Question</h4>
+          <p>
+            What happens when the aesthetic meets a cheaper look-alike? DipYourToes sells
+            near-identical Mary Jane-style footwear at a more accessible price point. If visual
+            identity is the main differentiator, the brand is exposed where pricing depends on
+            being different.
+          </p>
+        </div>
+
+        <div class="project-panel">
+          <h4>The Strategy</h4>
+          <ul>
+            <li><strong>Unify the narrative:</strong> Extend the cinematic voice into product descriptions and checkout.</li>
+            <li><strong>Reposition the hero:</strong> Replace substitutable silhouettes with proprietary designs or multi-category “scenes.”</li>
+            <li><strong>Give navigation a voice:</strong> Layer campaign-based “Edits” alongside product categories.</li>
+          </ul>
+        </div>
+
+        <div class="project-panel project-wide">
+          <h4>Execution — Proposed Copy Rewrite</h4>
+          <div class="before-after">
+            <div class="ba">
+              <strong>Before</strong>
+              “A floral woody blend with a touch of spice fun, Tragedy makes for a well-suited evening perfume...”
+            </div>
+            <div class="ba">
+              <strong>After</strong>
+              “She doesn't ask to be liked. She asks to be remembered. A floral-woody eau de parfum,
+              she arrives uninvited with a sharp, combative flash of lemon, bergamot, pepper and
+              patchouli...” (Composition reframed as The Opening Act, The Interlude, The Final Act).
+            </div>
+          </div>
+        </div>
+
+        <div class="project-panel project-wide">
+          <a class="btn btn-secondary" href="theater-brand-audit.pdf" target="_blank" rel="noopener">Read the Full Brand Audit Document →</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- PROJECT 2 -->
+    <article class="project campaign">
+      <div class="project-top">
+        <div>
+          <div class="project-kicker">Project 02 · Campaign Strategy</div>
+          <h3>THEATER.XYZ — “PLOT TWIST”</h3>
+          <p>Dress for the Plot.</p>
+        </div>
+        <div class="project-number">02</div>
+      </div>
+
+      <div class="project-grid">
+        <div class="project-panel project-wide">
+          <h4>Overview</h4>
+          <p>An integrated campaign strategy using the Smart Insights Campaign Planning + RACE Framework.</p>
+        </div>
+
+        <div class="project-panel">
+          <h4>The Problem</h4>
+          <p>
+            Theater doesn't have an awareness problem; it has a wear-frequency problem.
+            Statement pieces are bought predominantly for planned occasions, resulting in high
+            desire but low wear frequency and low repeat purchase rates (common in Indian D2C fashion).
+          </p>
+        </div>
+
+        <div class="project-panel">
+          <h4>The Insight & Idea</h4>
+          <p>
+            Move statement pieces out of the occasion slot and into the everyday slot
+            (office, coffee runs, commute).
+          </p>
+          <p style="margin-top:12px"><em>“The twist isn't scheduled. It doesn't wait for Saturday. So the dressing shouldn't either.”</em></p>
+        </div>
+
+        <div class="project-panel project-wide">
+          <h4>Execution Slate</h4>
+          <div class="strategy-chain">
+            <div class="chain-card"><span>01</span><strong>Office → Theatre</strong><small>Hero Film: Workday transformation</small></div>
+            <div class="chain-card"><span>02</span><strong>Coffee Run → Red Carpet</strong><small>Everyday errand with statement jewellery</small></div>
+            <div class="chain-card"><span>03</span><strong>Commute → Dressing Room</strong><small>Weekday transit with statement shoes</small></div>
+            <div class="chain-card"><span>04</span><strong>The Twist That Doesn't Resolve</strong><small>Pattern-break film</small></div>
+          </div>
+        </div>
+
+        <div class="project-panel project-wide">
+          <h4>Commercial Model</h4>
+          <p>
+            Merchandised “Scene Bundles” (The Tuesday Scene, The Commute Scene) pairing daily-driver
+            staples with statement pieces to raise AOV by 5–15% and model everyday styling permission.
+          </p>
+        </div>
+
+        <div class="project-panel project-wide">
+          <a class="btn btn-secondary" href="theater-plot-twist-campaign.pdf" target="_blank" rel="noopener">Read the Full Campaign Strategy Document →</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- PROJECT 3 -->
+    <article class="project brand">
+      <div class="project-top">
+        <div>
+          <div class="project-kicker">Project 03 · Brand Creation</div>
+          <h3>MISTEA HOLLOW</h3>
+          <p>A premium tea world built from an unaddressed consumer tension.</p>
+        </div>
+        <div class="project-number">03</div>
+      </div>
+
+      <div class="project-quote">
+        MisTea Hollow is a brand created from a consumer tension rather than a product — built
+        strategy-first, with the brand world designed to justify the loyalty mechanic, not decorate it.
+      </div>
+
+      <div class="project-grid">
+        <div class="project-panel project-wide">
+          <h4>Consumer Tension — Rational people who still notice small, beautiful things</h4>
+          <p>
+            The target isn't a “wellness” persona. It's someone who lives a deadline-driven,
+            practical life — and privately still notices the light making a rainbow in a glass of
+            tap water, or milk blooming into coffee. That noticing has no outlet in their daily
+            routine, and most tea brands talk to either the clinical “functional” buyer or the
+            aesthetic “cottagecore” buyer, never both at once.
+          </p>
+        </div>
+
+        <div class="project-panel">
+          <h4>Insight → Opportunity</h4>
+          <p><strong>Whimsy isn't decoration — it's a suppressed habit</strong></p>
+          <p style="margin-top:10px">
+            Chitra, 29 — deadline-driven, health-conscious, no time to read — is the persona built
+            to hold this tension. On weekends she lights candles, reads, and makes herbal tea;
+            on weekdays that instinct has nowhere to go. The opportunity is a brand that gives her
+            small noticing a ritual and a name, instead of asking her to become a different kind
+            of person to enjoy it.
+          </p>
+        </div>
+
+        <div class="project-panel">
+          <h4>Brand Permission</h4>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:1.45rem;line-height:1.2">
+            “Keep Your Whimsy Alive”
+          </p>
+          <p style="margin-top:10px">
+            Not an aesthetic tagline, but a permission structure for people who've stopped giving themselves one.
+          </p>
+        </div>
+
+        <div class="project-panel project-wide">
+          <h4>The Pain Point</h4>
+          <p>
+            People know traditional home remedies work — but the effort kills the habit. Soaking
+            ingredients overnight, following a multi-step ritual, staying consistent about it: it's
+            one more mundane chore layered onto an already tiring day, so most people quietly give up
+            on it. MisTea Hollow strips that effort out. The remedy is pre-blended, steep-and-go, and
+            needs no overnight prep — the ritual stays, the labor doesn't.
+          </p>
+        </div>
+
+        <div class="project-panel project-wide">
+          <h4>Positioning → Brand World</h4>
+          <p>The strategic chain from tension to advantage</p>
+          <div class="strategy-chain">
+            <div class="chain-card"><span>Consumer tension</span><strong>Rational, practical people who still notice small beauty</strong></div>
+            <div class="chain-card"><span>Consumer insight</span><strong>That noticing is suppressed, not absent — it needs permission, not persuasion</strong></div>
+            <div class="chain-card"><span>Strategic opportunity</span><strong>Own the ritual that turns noticing into a habit, not just an aesthetic</strong></div>
+            <div class="chain-card"><span>Positioning</span><strong>A tea brand for oddly specific human problems, not generic wellness</strong></div>
+            <div class="chain-card"><span>Brand territory</span><strong>Literary, apothecary-inspired — “Peculiar Cures,” not blends</strong></div>
+            <div class="chain-card"><span>Product system</span><strong>Each Cure a real, functional blend tied to one specific problem</strong></div>
+            <div class="chain-card"><span>Brand world</span><strong>Cures, Character Cards, and a wider “Hollow” mythology</strong></div>
+            <div class="chain-card"><span>Customer journey</span><strong>Unboxing as narrative — a “Peculiar Prescription” card with every order</strong></div>
+            <div class="chain-card"><span>Collecting mechanism</span><strong>Chapter Seals collected across purchases, unlocking a Collector's Cup</strong></div>
+            <div class="chain-card"><span>Strategic advantage</span><strong>Loyalty built on narrative completion, not a discount ladder a competitor can undercut</strong></div>
+          </div>
+        </div>
+
+        <div class="project-panel project-wide">
+          <h4>The Product System — Peculiar Cures: functional first, story second</h4>
+          <p>
+            Every Cure is built around one genuine, common household remedy — the kind found in an
+            Indian kitchen — tied directly to the specific problem it names, then built into a blend
+            meant to actually taste good rather than read as medicine.
+          </p>
+        </div>
+
+        <div class="project-panel">
+          <h4>Cure I</h4>
+          <p><strong>For the Untangling of Thoughts</strong><br>Lavender, Lemon & Fenugreek</p>
+          <small>Fenugreek — a household remedy for an unsettled stomach</small>
+        </div>
+
+        <div class="project-panel">
+          <h4>Cure II</h4>
+          <p><strong>For the Late, Loud Mind</strong><br>Chamomile, Nutmeg & Warm Milk Thistle</p>
+          <small>Nutmeg — a traditional aid for restlessness before sleep</small>
+        </div>
+
+        <div class="project-panel">
+          <h4>Cure III</h4>
+          <p><strong>For the Ordinary Tuesday</strong><br>Ginger, Tulsi & Orange Peel</p>
+          <small>Tulsi — a household remedy for low energy and colds</small>
+        </div>
+
+        <div class="project-panel">
+          <h4>The Campaign</h4>
+          <p><strong>Keep the Whimsy Alive — a 4-week activation</strong></p>
+          <ul>
+            <li><strong>The Potter's Cabinet:</strong> limited ceramics made with indie potters, each tied to a specific Cure — collecting all four unlocks a discount.</li>
+            <li><strong>Bookstagram, “Every chapter deserves a cure”:</strong> creators pair a current read with the Cure that fits its mood, with monthly featured pairings.</li>
+            <li><strong>Small Rituals:</strong> cozy-lifestyle creators fold a Cure into an existing routine — a Weekend Reset, a Slow Morning — rather than treating tea as the whole content idea.</li>
+          </ul>
+        </div>
+
+        <div class="project-panel project-wide">
+          <h4>Why It Matters</h4>
+          <p><strong>A brand world exists to make the mechanic believable.</strong></p>
+          <p style="margin-top:10px">
+            The Cure Seals, Character Cards and Collector's Cup aren't decoration bolted onto a
+            tea subscription — they're what make “keep collecting” feel like continuing a story
+            instead of chasing a discount. That's the strategic bet behind MisTea Hollow: a brand
+            world built specifically to make its own loyalty mechanic make sense, rather than a
+            loyalty mechanic added to a brand world after the fact.
+          </p>
+        </div>
+
+        <div class="project-panel project-wide">
+          <h4>Overview</h4>
+          <p>
+            A complete end-to-end brand creation project built for urban millennials and Gen Z seeking
+            daily, grounding rituals amidst corporate burnout.
+          </p>
+          <p style="margin-top:10px">
+            <strong>The Tension:</strong> Daily workplace routines offer caffeinated energy but lack intentional rest or sensory grounding.
+          </p>
+          <p style="margin-top:10px">
+            <strong>The Solution & Brand System:</strong> MisTea Hollow — a curated line of premium
+            loose-leaf teas and matcha blends. Built from scratch covering brand positioning, visual
+            identity, packaging design, tone of voice, and digital launch funnel architecture.
+            Packaging is designed to feel intentional rather than disposable — each tin and box
+            doubles as a reusable collectible, built to be kept and displayed rather than thrown away.
+          </p>
+          <p style="margin-top:10px">
+            <strong>Brand World:</strong> Whimsical botanical aesthetics, grounded narrative, and
+            functional ritual routines integrated into daily workday pauses.
+          </p>
+        </div>
+
+        <div class="project-panel project-wide">
+          <!-- Updated Local File Link -->
+          <a class="btn btn-secondary" href="mistea-hollow-brand-creation.pdf" target="_blank" rel="noopener">Read the Full Brand Creation Document →</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="toolkit" class="toolkit">
+  <div class="container">
+    <div class="section-label">03 — Toolkits</div>
+    <h2 class="section-title">The tools behind the thinking.</h2>
+    <p class="section-intro">
+      Certifications and working tools are presented as a toolkit rather than as a separate résumé dump.
+      
+    </p>
+
+    <div class="toolkit-grid">
+      <div class="tool"><h4>Google Analytics</h4><p>Analytics & measurement toolkit</p></div>
+      <div class="tool"><h4>Google Campaign Manager 360</h4><p>Campaign measurement & ad operations</p></div>
+      <div class="tool"><h4>SEO</h4><p>Search strategy toolkit</p></div>
+      <div class="tool"><h4>Content Strategy</h4><p>Content planning & strategic thinking</p></div>
+      <div class="tool"><h4>Canva</h4><p>Visual communication</p></div>
+      <div class="tool"><h4>Excel</h4><p>Analysis & structured thinking</p></div>
+      <div class="tool"><h4>Salesforce CRM</h4><p>Customer workflows & funnel architecture</p></div>
+      <div class="tool"><h4>UX Foundations</h4><p>Product & user experience thinking</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="experience">
+  <div class="container">
+    <div class="section-label">04 — Experience</div>
+    <h2 class="section-title">Where the systems thinking started.</h2>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <h3>BE in Computer Science and Engineering</h3>
+        <div class="meta">2023 · CGPA 9.1</div>
+        <p>The systems and structured-thinking foundation that later carried over into CRM auditing and brand strategy.</p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>Associate IT Consultant</h3>
+        <div class="meta">ITC Infotech · Salesforce CRM & Funnel Architecture</div>
+        <p>
+          Worked inside a live Salesforce CRM environment, auditing business logic, mapping customer
+          funnels, and testing workflows that determine whether a system works for its intended user.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>Online MBA in Marketing Management</h3>
+        <div class="meta">NMIMS · 2026–2028</div>
+        <p>2-Year Program.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="contact-box">
+      <div>
+        <div class="section-label">05 — Contact</div>
+        <h2>Let's talk<br>strategy.</h2>
+        <p style="margin-top:18px;max-width:520px">
+          For brand strategy, campaign thinking, consumer insight, and brand-building conversations.
+        </p>
+      </div>
+      <div class="contact-links">
+        <!-- Replace the placeholders below with the contact details from your résumé. -->
+        <a class="contact-link" href="mailto:YOUR_EMAIL@example.com">Email ↗</a>
+        <a class="contact-link" href="#" onclick="return false;">LinkedIn ↗</a>
+        <a class="contact-link" href="#projects">View Projects ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <small>© 2026 Diya Baskar · Brand Strategy Portfolio</small>
+    <a class="back-top" href="#top">Back to top ↑</a>
+  </div>
+</footer>
+
+</body>
+</html>
